@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "heroku-postbuild": "ng build --prod",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -44,5 +45,9 @@
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1"
+  },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
   }
 }
