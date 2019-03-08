@@ -1,20 +1,23 @@
-<mat-toolbar color="primary">
-  <img width="70" src="./../assets/apex-legends-logo-white.png">
-  <h2 class="ml-5">Stats Tracker</h2>
-</mat-toolbar>
+<div class="hero" style="height: 320px;">
+  <div style="text-align: right">
+    <h1 class="pt-2 mr-5">Apex Legends Stats Tracker</h1>
+  </div>
 
-<mat-toolbar style="height: 100px;" class="mt-3" color="primary">
-  <mat-form-field style="width: 400px">
-    <span>Username : </span>
-    <input matInput>
-  </mat-form-field>
+  <div style="width: 230px; background-color:white" class="text-center p-2 ml-3 mr-5 float-right mat-elevation-z6">
+    <mat-form-field class="ml-1 " style="width: 200px">
+      <input matInput placeholder="Username">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="ml-1" style="width: 200px;">
+      <mat-select placeholder="Platform">
+        <mat-option value="5">Origin / PC</mat-option>
+        <mat-option value="1">Xbox</mat-option>
+        <mat-option value="2">PS4</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-
-  <mat-radio-group class="ml-5">
-    <span class="ml-5">Platform : </span>
-    <mat-radio-button class="ml-2" value="1">Xbox</mat-radio-button>
-    <mat-radio-button class="ml-5" value="2">PS4</mat-radio-button>
-    <mat-radio-button class="ml-5" value="5">Origin / PC</mat-radio-button>
-  </mat-radio-group>
-
-</mat-toolbar>
+    <br>
+    <button mat-raised-button color="primary">Search</button>
+    <br>
+  </div>
+</div>
