@@ -4,40 +4,33 @@
   </div>
 
   <div style="width: 230px; background-color:white" class="text-center p-2 ml-3 mr-5 float-right mat-elevation-z6">
-    <mat-form-field class="ml-1 " style="width: 200px">
-      <input matInput placeholder="Username">
-    </mat-form-field>
-    <br>
-    <mat-form-field class="ml-1" style="width: 200px;">
-      <mat-select placeholder="Platform">
-        <mat-option value="5">Origin / PC</mat-option>
-        <mat-option value="1">Xbox</mat-option>
-        <mat-option value="2">PS4</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <form>
+      <mat-form-field class="ml-1 " style="width: 200px">
+        <input [formControl]="username" matInput placeholder="Username">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="ml-1" style="width: 200px;">
+        <mat-select [formControl]="platformId" placeholder="Platform">
+          <mat-option value="5">Origin / PC</mat-option>
+          <mat-option value="1">Xbox</mat-option>
+          <mat-option value="2">PS4</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
 
     <br>
-    <button mat-raised-button color="primary">Search</button>
+    <button (click)="search()" mat-raised-button color="primary">Search</button>
     <br>
   </div>
 </div>
-<div class="mt-2" style="text-align: center">
-  <ng-container *ngIf="!isMobile()">
-    <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=26&l=ur1&category=videogames&banner=0ZVMQPC5S8YNQ2H8V582&f=ifr&linkID=4f5de5210c318b590a0a4211706ed64d&t=apexstatstrac-20&tracking_id=apexstatstrac-20" width="468" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-    <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=26&l=ur1&category=amazon_smp_fallback&banner=03014JKCZJ5225WEBHG2&f=ifr&linkID=29c6ffcd6714a081af8c0d31f25f21ac&t=apexstatstrac-20&tracking_id=apexstatstrac-20" width="468" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-  </ng-container>
 
-  <ng-container *ngIf="isMobile()">
-    <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=twitchprime&banner=025E4WXKK5G4EXYGDD02&f=ifr&linkID=fb4e689fe5bb2dfeb665718065770ab0&t=apexstatstrac-20&tracking_id=apexstatstrac-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe> </ng-container>
-</div>
+<apex-stats></apex-stats>
 
-<div class="mt-2" style="text-align: center">
-  <ng-container *ngIf="isMobile()">
-    <iframe src="//rcm-na.amazon-adsystem.com/e/cm?o=1&p=12&l=ur1&category=videogames&banner=10WENS9ZG6HMMRMHAMR2&f=ifr&linkID=7f3caf1414d16236e01761c9b2eecd5a&t=apexstatstrac-20&tracking_id=apexstatstrac-20" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-  </ng-container>
-</div>
+{{stats|json}}
+
+<apex-ad></apex-ad>
 
 
-<mat-toolbar class="fixed-bottom" color="primary">
+<mat-toolbar color="primary">
   {{title}} © 2019
 </mat-toolbar>
