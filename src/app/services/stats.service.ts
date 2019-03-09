@@ -9,7 +9,7 @@ export class StatsService {
   constructor(readonly http: HttpClient) { }
 
   getPlayerStats(platform: Number, username: String) {
-    return this.http.get(`http://localhost:4500/api/v1/stats/${platform}/${username}`, {
+    return this.http.get(`/api/v1/stats/${platform}/${username}`, {
       headers: {
         'TRN-Api-Key': 'c2062457-01a7-4146-8a70-59d9131d070f',
         'Accept': 'application/json'

@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(readonly platform: Platform, readonly statsServ: StatsService) {
 
   }
-  stats: any = {};
+  stats: any;
   username = new FormControl(null, Validators.required);
   platformId = new FormControl(5, Validators.required);
 
