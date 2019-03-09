@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Platform } from '@angular/cdk/platform';
 
 @Component({
   selector: 'apex-stats',
@@ -7,10 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StatsComponent implements OnInit {
 
-  constructor() { }
+  @Input() stats: any;
+
+  constructor(readonly platform: Platform) { }
 
   ngOnInit() {
 
   }
 
+  isMobile(): boolean {
+    return this.platform.ANDROID || this.platform.IOS;
+  }
 }

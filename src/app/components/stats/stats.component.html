@@ -1,3 +1,41 @@
-<p>
-  stats works!
-</p>
+<div class="ml-5 mt-3">
+  <h1>{{stats.data.metadata.platformUserHandle}}</h1>
+  <ng-container *ngFor="let stat of stats.data.stats">
+    <h5>{{ stat.metadata.name }}: {{ stat.value }}</h5>
+    <h5 *ngIf="stat.rank">Ranking: {{ stat.displayRank }}</h5>
+  </ng-container>
+</div>
+
+<div ngIf="!isMobile()" class="row m-4">
+  <div class="col-3" *ngFor="let legend of stats.data.children">
+    <mat-card class="text-center">
+      <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title>{{legend.metadata.legend_name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="legend.metadata.icon" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <ng-container *ngFor="let stat of legend.stats">
+          <h5 class="ml-3">{{ stat.metadata.name }}: {{ stat.value }}</h5>
+        </ng-container>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div ngIf="isMobile()" class="row">
+  <div class="col-12" *ngFor="let legend of stats.data.children">
+    <mat-card class="text-center">
+      <mat-card-header>
+        <div mat-card-avatar></div>
+        <mat-card-title>{{legend.metadata.legend_name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="legend.metadata.icon" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <ng-container *ngFor="let stat of legend.stats">
+          <h5>{{ stat.metadata.name }}: {{ stat.value }}</h5>
+        </ng-container>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

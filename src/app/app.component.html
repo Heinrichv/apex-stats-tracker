@@ -24,12 +24,8 @@
   </div>
 </div>
 
-<apex-stats></apex-stats>
-
-{{stats|json}}
-
+<apex-stats *ngIf="stats" [stats]="stats"></apex-stats>
 <apex-ad></apex-ad>
-
 
 <mat-toolbar color="primary">
   {{title}} © 2019
