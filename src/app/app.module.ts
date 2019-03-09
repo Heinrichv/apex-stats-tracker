@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { PlatformModule } from '@angular/cdk/platform';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
@@ -12,7 +13,8 @@ import { MaterialModule } from './material/material.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    PlatformModule
   ],
   providers: [],
   bootstrap: [AppComponent]
