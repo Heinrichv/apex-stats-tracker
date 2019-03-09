@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'apex-stats',
@@ -10,6 +10,7 @@ export class StatsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

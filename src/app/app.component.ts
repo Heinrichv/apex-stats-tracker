@@ -9,10 +9,11 @@ import { StatsService } from './services/stats.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(readonly platform: Platform, readonly stats: StatsService) {
+
+  constructor(readonly platform: Platform, readonly statsServ: StatsService) {
 
   }
-
+  stats: any = {};
   username = new FormControl(null, Validators.required);
   platformId = new FormControl(5, Validators.required);
 
@@ -25,7 +26,10 @@ export class AppComponent {
 
   search() {
     console.log(this.username.value, this.platformId.value);
-    this.stats.getPlayerStats(this.platformId.value, this.username.value)
-      .subscribe(res => console.log(res));
+    this.statsServ.getPlayerStats(this.platformId.value, this.username.value)
+      .subscribe(res => {
+        console.log(res);
+        this.stats = res;
+      });
   }
 }
