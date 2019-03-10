@@ -26,7 +26,8 @@ export class AppComponent {
 
   search() {
     console.log(this.username.value, this.platformId.value);
-    this.statsServ.getPlayerStats(this.platformId.value, this.username.value)
+    // this.statsServ.getPlayerStats(this.platformId.value, this.username.value)
+    this.statsServ.getPlayerStats(5, 'DeftLeper')
       .subscribe(res => {
         console.log(res);
         this.stats = res;

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -23,7 +23,7 @@ import { StatsService } from './services/stats.service';
     BrowserAnimationsModule,
     MaterialModule,
     PlatformModule,
-    HttpClientModule,
+    HttpModule,
     FormsModule,
     ReactiveFormsModule,
   ],

@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Http, Headers, Response } from '@angular/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StatsService {
-
-  constructor(readonly http: HttpClient) { }
-
+export class StatsService {  
+  constructor(readonly http: Http) { }
   getPlayerStats(platform: Number, username: String) {
-    return this.http.get(`/api/v1/stats/${platform}/${username}`, {
-      headers: {
-        'TRN-Api-Key': 'c2062457-01a7-4146-8a70-59d9131d070f',
-        'Accept': 'application/json'
-      }
+    const headers = new Headers({'TRN-Api-Key': '1d57cffb-0296-45af-84de-0d2c7bbf9fc7'});
+    debugger;
+    return this.http.get(`https://public-api.tracker.gg/apex/v1/standard/profile/${platform}/${username}`, {
+      headers: headers
     });
   }
+
 }
